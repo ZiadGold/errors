@@ -1,0 +1,74 @@
+2021-03-25T14:05:05.758681+00:00 app[worker.1]: ERROR: No video formats found; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+2021-03-25T14:05:05.954628+00:00 app[worker.1]: Ignoring exception in on_command_error
+2021-03-25T14:05:05.961547+00:00 app[worker.1]: Traceback (most recent call last):
+2021-03-25T14:05:05.961617+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 806, in wrapper
+2021-03-25T14:05:05.961618+00:00 app[worker.1]:     return func(self, *args, **kwargs)
+2021-03-25T14:05:05.961647+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 827, in __extract_info
+2021-03-25T14:05:05.961649+00:00 app[worker.1]:     ie_result = ie.extract(url)
+2021-03-25T14:05:05.961653+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/extractor/common.py", line 534, in extract
+2021-03-25T14:05:05.961654+00:00 app[worker.1]:     ie_result = self._real_extract(url)
+2021-03-25T14:05:05.961691+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/extractor/youtube.py", line 1660, in _real_extract
+2021-03-25T14:05:05.961692+00:00 app[worker.1]:     self._sort_formats(formats)
+2021-03-25T14:05:05.961696+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/extractor/common.py", line 1369, in _sort_formats
+2021-03-25T14:05:05.961698+00:00 app[worker.1]:     raise ExtractorError('No video formats found')
+2021-03-25T14:05:05.961766+00:00 app[worker.1]: youtube_dl.utils.ExtractorError: No video formats found; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+2021-03-25T14:05:05.961772+00:00 app[worker.1]: 
+2021-03-25T14:05:05.961773+00:00 app[worker.1]: During handling of the above exception, another exception occurred:
+2021-03-25T14:05:05.961773+00:00 app[worker.1]: 
+2021-03-25T14:05:05.961822+00:00 app[worker.1]: Traceback (most recent call last):
+2021-03-25T14:05:05.961995+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/discord/ext/commands/core.py", line 85, in wrapped
+2021-03-25T14:05:05.961996+00:00 app[worker.1]:     ret = await coro(*args, **kwargs)
+2021-03-25T14:05:05.962031+00:00 app[worker.1]:   File "/app/cogs/music.py", line 284, in play_
+2021-03-25T14:05:05.962033+00:00 app[worker.1]:     source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop, download=False)
+2021-03-25T14:05:05.962036+00:00 app[worker.1]:   File "/app/cogs/music.py", line 70, in create_source
+2021-03-25T14:05:05.962037+00:00 app[worker.1]:     data = await loop.run_in_executor(None, to_run)
+2021-03-25T14:05:05.962073+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+2021-03-25T14:05:05.962074+00:00 app[worker.1]:     result = self.fn(*self.args, **self.kwargs)
+2021-03-25T14:05:05.962077+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 799, in extract_info
+2021-03-25T14:05:05.962077+00:00 app[worker.1]:     return self.__extract_info(url, ie, download, extra_info, process)
+2021-03-25T14:05:05.962107+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 806, in wrapper
+2021-03-25T14:05:05.962107+00:00 app[worker.1]:     return func(self, *args, **kwargs)
+2021-03-25T14:05:05.962135+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 838, in __extract_info
+2021-03-25T14:05:05.962136+00:00 app[worker.1]:     return self.process_ie_result(ie_result, download, extra_info)
+2021-03-25T14:05:05.962184+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 879, in process_ie_result
+2021-03-25T14:05:05.962185+00:00 app[worker.1]:     extra_info=extra_info)
+2021-03-25T14:05:05.962187+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 799, in extract_info
+2021-03-25T14:05:05.962188+00:00 app[worker.1]:     return self.__extract_info(url, ie, download, extra_info, process)
+2021-03-25T14:05:05.962218+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 806, in wrapper
+2021-03-25T14:05:05.962219+00:00 app[worker.1]:     return func(self, *args, **kwargs)
+2021-03-25T14:05:05.962245+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 838, in __extract_info
+2021-03-25T14:05:05.962246+00:00 app[worker.1]:     return self.process_ie_result(ie_result, download, extra_info)
+2021-03-25T14:05:05.962269+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 924, in process_ie_result
+2021-03-25T14:05:05.962270+00:00 app[worker.1]:     return self.__process_playlist(ie_result, download)
+2021-03-25T14:05:05.962296+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 1058, in __process_playlist
+2021-03-25T14:05:05.962296+00:00 app[worker.1]:     entry_result = self.__process_iterable_entry(entry, download, extra)
+2021-03-25T14:05:05.962325+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 806, in wrapper
+2021-03-25T14:05:05.962326+00:00 app[worker.1]:     return func(self, *args, **kwargs)
+2021-03-25T14:05:05.962352+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 1068, in __process_iterable_entry
+2021-03-25T14:05:05.962352+00:00 app[worker.1]:     entry, download=download, extra_info=extra_info)
+2021-03-25T14:05:05.962380+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 884, in process_ie_result
+2021-03-25T14:05:05.962380+00:00 app[worker.1]:     extra_info=extra_info, download=False, process=False)
+2021-03-25T14:05:05.962407+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 799, in extract_info
+2021-03-25T14:05:05.962407+00:00 app[worker.1]:     return self.__extract_info(url, ie, download, extra_info, process)
+2021-03-25T14:05:05.962435+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 815, in wrapper
+2021-03-25T14:05:05.962436+00:00 app[worker.1]:     self.report_error(compat_str(e), e.format_traceback())
+2021-03-25T14:05:05.962463+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 628, in report_error
+2021-03-25T14:05:05.962464+00:00 app[worker.1]:     self.trouble(error_message, tb)
+2021-03-25T14:05:05.962490+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/youtube_dl/YoutubeDL.py", line 598, in trouble
+2021-03-25T14:05:05.962490+00:00 app[worker.1]:     raise DownloadError(message, exc_info)
+2021-03-25T14:05:05.962540+00:00 app[worker.1]: youtube_dl.utils.DownloadError: ERROR: No video formats found; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+2021-03-25T14:05:05.962573+00:00 app[worker.1]: 
+2021-03-25T14:05:05.962573+00:00 app[worker.1]: The above exception was the direct cause of the following exception:
+2021-03-25T14:05:05.962574+00:00 app[worker.1]: 
+2021-03-25T14:05:05.962614+00:00 app[worker.1]: Traceback (most recent call last):
+2021-03-25T14:05:05.962690+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/discord/client.py", line 343, in _run_event
+2021-03-25T14:05:05.962691+00:00 app[worker.1]:     await coro(*args, **kwargs)
+2021-03-25T14:05:05.962721+00:00 app[worker.1]:   File "main.py", line 85, in on_command_error
+2021-03-25T14:05:05.962722+00:00 app[worker.1]:     raise error
+2021-03-25T14:05:05.962725+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 902, in invoke
+2021-03-25T14:05:05.962725+00:00 app[worker.1]:     await ctx.command.invoke(ctx)
+2021-03-25T14:05:05.962759+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/discord/ext/commands/core.py", line 864, in invoke
+2021-03-25T14:05:05.962760+00:00 app[worker.1]:     await injected(*ctx.args, **ctx.kwargs)
+2021-03-25T14:05:05.962783+00:00 app[worker.1]:   File "/app/.heroku/python/lib/python3.6/site-packages/discord/ext/commands/core.py", line 94, in wrapped
+2021-03-25T14:05:05.962784+00:00 app[worker.1]:     raise CommandInvokeError(exc) from exc
+2021-03-25T14:05:05.962830+00:00 app[worker.1]: discord.ext.commands.errors.CommandInvokeError: Command raised an exception: DownloadError: ERROR: No video formats found; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
