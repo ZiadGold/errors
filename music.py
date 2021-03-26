@@ -152,7 +152,7 @@ class Song:
 		self.source = source
 		self.requester = source.requester
 
-	def create_embed(self):
+	async def create_embed(self):
 		await self.client.change_presence(activity=discord.Game(name=f"{0.source.title}"))
 		embed = (discord.Embed(
 		    title='Now playing',
