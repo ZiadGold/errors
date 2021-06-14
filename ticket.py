@@ -184,3 +184,20 @@ class Ticket(commands.Cog):
             
 def setup(client):
     client.add_cog(Ticket(client))
+
+
+
+
+
+
+#discord.errors.Forbidden: 403 Forbidden (error code: 60003): Two factor is required for this operation
+#Ignoring exception in on_raw_reaction_add
+#Traceback (most recent call last):
+  #File "/home/container/discord/client.py", line 343, in _run_event
+    #await coro(*args, **kwargs)
+  #File "/home/container/cogs/ticket.py", line 165, in on_raw_reaction_add
+    #await channel_true.delete()
+  #File "/home/container/discord/abc.py", line 574, in delete
+    #await self._state.http.delete_channel(self.id, reason=reason)
+  #File "/home/container/discord/http.py", line 248, in request
+    #raise Forbidden(r, data)
